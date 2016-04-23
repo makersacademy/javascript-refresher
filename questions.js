@@ -1,5 +1,3 @@
-var result;
-
 var selectElementsStartingWithA = function(array) {
   return array.filter(_startsWithA);
 }
@@ -40,9 +38,7 @@ function _notFalse(item){
 }
 
 var reverseWordsInArray = function(array) {
-  return array.map(function(item){
-    return _reverseString(item);
-  });
+  return array.map(_reverseString);
 }
 
 function _reverseString(string) {
@@ -50,15 +46,14 @@ function _reverseString(string) {
 }
 
 var everyPossiblePair = function(array) {
-  result = [];
-  array.forEach(function(outerItem, outerIndex){
-    array.forEach(function(innerItem, innerIndex){
-      if(innerIndex > outerIndex){
-        result.push([innerItem, outerItem].sort());
-      }
-    })
-  })
-  return result.sort();
+  return array.reduce(_arrayPair, []).sort();
+}
+
+function _arrayPair(result, element, index, array){
+  for(var i=index+1; i<array.length; i++){
+    result.push([element, array[i]].sort());
+  }
+  return result;
 }
 
 var allElementsExceptFirstThree = function(array) {
@@ -75,9 +70,7 @@ var sortByLastLetter = function(array) {
 }
 
 function _reverseElements(array) {
-  return array.map(function(item){
-    return _reverseString(item);
-  })
+  return array.map(_reverseString);
 }
 
 var getFirstHalf = function(string) {
@@ -89,31 +82,28 @@ var makeNegative = function(number) {
 }
 
 var numberOfPalindromes = function(array) {
-  result = 0;
-  array.forEach(function(item){
-    if(item == _reverseString(item)){ result += 1; }
-  });
-  return result;
+  return array.filter(_isPalindrome).length;
+}
+
+function _isPalindrome(string){
+  return string == _reverseString(string);
 }
 
 var shortestWord = function(array) {
-  var shortPos = 0;
-  var shortLength = 99;
-  array.forEach(function(item, index){
-    if(item.length < shortLength){
-      shortPos = index;
-      shortLength = item.length;
-    }
-  });
-  return array[shortPos];
+  var result = array.reduce(_shortestWord, {pos: 0, length: 99});
+  return array[result.pos];
+}
+
+function _shortestWord(result, item, index){
+  return (item.length < result.length ? {pos: index, length: item.length} : result);
 }
 
 var longestWord = function(array) {
-  var temp='';
-  array.forEach(function(item, index){
-    if(item.length > temp.length){ temp = item;}
-  });
-  return temp;
+  return array.reduce(_longestWord, '');
+}
+
+function _longestWord(result, item){
+  return (item.length > result.length ? item : result);
 }
 
 var sumNumbers = function(array) {
@@ -145,12 +135,19 @@ var getElementsUntilGreaterThanFive = function(array) {
 }
 
 var convertArrayToObject = function(array) {
-  result={};
-  var key;
-  array.forEach(function(item, index){
-    (index % 2 == 0) ? key = item : result[key] = item;
-  });
+  var result = array.reduce(_convertToKeyValue, {prevKey: ''})
+  delete result['prevKey'];
   return result;
+}
+
+function _convertToKeyValue(object, element, index){
+  if (index % 2 == 0){
+    object.prevKey = element;
+    object[element] = '';
+  } else {
+    object[object.prevKey] = element;
+  }
+  return object;
 }
 
 var getAllLetters = function(array) {
@@ -162,7 +159,7 @@ function _onlyUnique(value, index, self) {
 }
 
 var swapKeysAndValues = function(object) {
-  result={};
+  var result={};
   for (var prop in object){
     result[object[prop]] = prop;
   }
@@ -170,7 +167,7 @@ var swapKeysAndValues = function(object) {
 }
 
 var sumKeysAndValues = function(object) {
-  result=0;
+  var result=0;
   for (var prop in object){
     result += (Number([object[prop]]) + Number(prop));
   }
@@ -231,8 +228,9 @@ var factorial = function(number) {
 }
 
 // Heap's algorithm: https://en.wikipedia.org/wiki/Heap%27s_algorithm
+var result = [];
+
 var findAnagrams = function(string) {
-  result = [];
   letters = string.split('');
   permute(letters.length, letters);
   return result.sort();
