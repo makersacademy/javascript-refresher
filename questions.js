@@ -192,20 +192,26 @@ var formatDateNicely = function(date) {
 
 var getDomainName = function(string) {
   var emailAry = string.split('@');
-  domainAry = emailAry[1].split('.');
+  var domainAry = emailAry[1].split('.');
   return domainAry.slice(0,-1).join('.');
 }
 
 var titleize = function(string) {
-  sentences = string.split('.')
-  sentences.forEach(_capitalizeFirstLetter);
-  return sentences.join('.')
+  var words = string.split(' ');
+  var sentences = _capitalizeWithExceptions(words).join(' ').split('.')
+  return sentences.map(_capitalizeFirstLetter).join('. ');
 }
+
+function _capitalizeWithExceptions(words){
+  var exceptions =['the','and'];
+  return words.map(function(word){
+    return (exceptions.indexOf(word) == -1 ? _capitalizeFirstLetter(word) : word );
+  });
+};
+
 function _capitalizeFirstLetter(text){
-  firstLetter = text.slice(0,1);
-  rest = text.slice(1);
-  console.log(firstLetter.toUpperCase() + rest);
-  return firstLetter.toUpperCase() + rest;
+  var trimText = text.trim();
+  return trimText.slice(0,1).toUpperCase() + trimText.slice(1);
 }
 
 var checkForSpecialCharacters = function(string) {
@@ -224,13 +230,36 @@ var factorial = function(number) {
   return result;
 }
 
+// Heap's algorithm: https://en.wikipedia.org/wiki/Heap%27s_algorithm
 var findAnagrams = function(string) {
+  result = [];
   letters = string.split('');
-  letters.forEach
-  console.log(letters);
-  return 'Write your method here';
+  permute(letters.length, letters);
+  return result.sort();
 }
 
+function permute(n, array){
+  if (n == 1){
+    result.push(array.join(''));
+  } else {
+    for (var i = 0; i < n - 1; i += 1){
+      permute(n - 1, array);
+      if (n%2 == 0 ){
+        _swapArrayElements(array, i, n-1);
+      } else {
+        _swapArrayElements(array, 0, n-1);
+      }
+    }
+    permute(n - 1, array);
+  }
+}
+
+function _swapArrayElements(array, i, j){
+  var temp = array[i];
+  array[i] = array[j];
+  array[j] = temp;
+  return array;
+}
 
 var convertToCelsius = function(number) {
   return Math.round((number - 32) * (5/9));
