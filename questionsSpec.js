@@ -143,6 +143,11 @@ describe('javascriptRefresher', function(){
     expect(result).toEqual('04/03/2015');
   });
 
+  it('formats a date number to 2 digits', function(){
+    var result = doubleDigitDate("9");
+    expect(result).toEqual('09');
+  });
+
   it('gets the domain name from an email address', function(){
     var result = getDomainName('spike@makersacademy.com');
     expect(result).toEqual('makersacademy');
