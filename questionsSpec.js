@@ -75,7 +75,7 @@ describe('javascriptRefresher', function(){
   });
 
   it('returns the longest word in an array', function(){
-    var result = longestWord(['A', 'Lannister', 'always', 'pays', 'his', 'debts'])
+    var result = longestWord(['A', 'Lannister', 'always', 'pays', 'his', 'debts']);
     expect(result).toEqual('Lannister');
   });
 
