@@ -48,6 +48,7 @@ var reverseWordsInArray = function(array) {
 };
 
 var everyPossiblePair = function(array) {
+
 };
 
 var allElementsExceptFirstThree = function(array) {
@@ -138,7 +139,12 @@ var getElementsUntilGreaterThanFive = function(array) {
 };
 
 var convertArrayToObject = function(array) {
-  return 'Write your method here';
+  result = {};
+  for (var i=0; i < array.length -1; i++) {
+    result[array[i]] = array[i+1];
+    i++;
+  }
+  return result;
 };
 
 var getAllLetters = function(array) {
