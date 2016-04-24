@@ -1,26 +1,32 @@
 var selectElementsStartingWithA = function(array) {
-  return 'Write your method here';
-}
+  return array.filter(function(element){ return element.charAt(0) === 'a'; });
+};
 
-var selectElementsStartingWithA = function(array) {
-  return 'Write your method here';
-}
 
 var selectElementsStartingWithVowel = function(array) {
-  return 'Write your method here';
+  return array.filter(_startsWithVowel);
+};
+
+function _startsWithVowel(item){
+  var vowels =['a','e','i','o','u'];
+  return vowels.some(function(vowel) {
+    return item.slice(0,1) === vowel;
+  });
 }
+
 
 var removeNullElements = function(array) {
-  return 'Write your method here';
-}
+  return array.filter(function(element){ return element !== null; });
+};
 
 var removeNullAndFalseElements = function(array) {
-  return 'Write your method here';
-}
+  return array.filter(function(element){ return element !== null && element !== false; });
+};
+
 
 var reverseWordsInArray = function(array) {
-  return 'Write your method here';
-}
+  return array.map(function(element){ return element.split("").reverse().join(""); });
+};
 
 var everyPossiblePair = function(array) {
   return 'Write your method here';
@@ -119,8 +125,8 @@ var checkForSpecialCharacters = function(string) {
 }
 
 var squareRoot = function(number) {
-  return 'Write your method here';
-}
+  return Math.sqrt(number);
+};
 
 var factorial = function(number) {
   return 'Write your method here';
