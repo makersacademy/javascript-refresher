@@ -164,19 +164,19 @@ describe('javascriptRefresher', function(){
     expect(resultTwo).toBe(true);
   });
 
-  // it('finds the square root of a number', function(){
-  //   var resultOne = squareRoot(9);
-  //   var resultTwo = squareRoot(3);
-  //
-  //   expect(resultOne).toEqual(3.0);
-  //   expect(resultTwo).toEqual(1.7320508075688772);
-  // });
-  //
-  // it('finds the factorial of a number', function(){
-  //   var result = factorial(5);
-  //   expect(result).toEqual(120); // = 5 * 4 * 3 * 2 * 1
-  // });
-  //
+  it('finds the square root of a number', function(){
+    var resultOne = squareRoot(9);
+    var resultTwo = squareRoot(3);
+
+    expect(resultOne).toEqual(3.0);
+    expect(resultTwo).toEqual(1.7320508075688772);
+  });
+
+  it('finds the factorial of a number', function(){
+    var result = factorial(5);
+    expect(result).toEqual(120); // = 5 * 4 * 3 * 2 * 1
+  });
+
   // it('finds all possible anagrams of a word', function(){
   //   var result = findAnagrams('mad');
   //   var expectedAnagrams = ["adm", "amd", "dam", "dma", "mad", "mda"];
@@ -189,7 +189,7 @@ describe('javascriptRefresher', function(){
   //     expect(result2).toContain(anagram);
   //   }
   // });
-  //
+
   // it('converts Fahrenheit to Celsius rounding to the nearest integer', function(){
   //   var resultOne = convertToCelsius(32);
   //   var resultTwo = convertToCelsius(55);

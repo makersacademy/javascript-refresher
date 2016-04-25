@@ -210,11 +210,15 @@ var checkForSpecialCharacters = function(string) {
 };
 
 var squareRoot = function(number) {
-  return 'Write your method here';
+  return Math.sqrt(number);
 };
 
 var factorial = function(number) {
-  return 'Write your method here';
+  var sum = number;
+  for (var i = number-1; i > 0; i--) {
+    sum *= i;
+  }
+  return sum;
 };
 
 var findAnagrams = function(string) {
