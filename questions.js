@@ -29,7 +29,7 @@ var reverseWordsInArray = function(array) {
 };
 
 var everyPossiblePair = function(ary1) {
-  ary2 = [];
+  var ary2 = [];
   ary1.forEach(function(value, index){
     ary2.push([ary1[index], (index === (ary1.length-1) ? ary1[0] : ary1[index+1]) ].sort());
   });
@@ -57,7 +57,7 @@ var sortByLastLetter = function(array) {
 };
 
 var getFirstHalf = function(string) {
-  halfLength = Math.ceil(string.length / 2);
+  var halfLength = Math.ceil(string.length / 2);
   return string.slice(0, halfLength);
 };
 
@@ -66,7 +66,7 @@ var makeNegative = function(number) {
 };
 
 var numberOfPalindromes = function(array) {
-  pals = [];
+  var pals = [];
   array.forEach(function(word){
     if (word === word.split('').reverse().join(''))
     pals.push(word);
@@ -126,7 +126,7 @@ var getElementsUntilGreaterThanFive = function(array) {
 };
 
 var convertArrayToObject = function(array) {
-  obj = {};
+  var obj = {};
   for (var i = 0; i < array.length; i = i + 2) {
   obj[array[i]] = array[i+1];
   }
@@ -134,12 +134,12 @@ var convertArrayToObject = function(array) {
 };
 
 var getAllLetters = function(array) {
-  noDup = [];
+  var noDup = [];
   array.forEach(function(string) {
   if (noDup.includes(string) === false)
     noDup.push(string);
 });
-  sorted = [];
+  var sorted = [];
   noDup.forEach(function(string){
     sorted.push(string.split(''));
   });
@@ -198,14 +198,30 @@ var getDomainName = function(string) {
 };
 
 var titleize = function(string) {
-  return string.replace(/\w\S*/g, function(txt){
-    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-  });
+  return capAfterFullStops(titleCase(string));
 };
 
+var titleCase = function(string) {
+  var ary = [];
+  string.split(' ').forEach(function(txt){
+    txt.length > 3 ? ary.push(capitalizeString(txt)) : ary.push(txt);
+  });
+  return ary.join(' ');
+};
+
+var capAfterFullStops = function(string){
+   var result = string.split('. ').map(function(subString) {
+     return (capitalizeString(subString));
+   });
+   return result.join('. ');
+ };
+
+var capitalizeString = function(string) {
+  return string[0].toUpperCase()+string.slice(1);
+};
 
 var checkForSpecialCharacters = function(string) {
-  result = string.match(/\W/g) !== null;
+  var result = string.match(/\W/g) !== null;
   return result;
 };
 
@@ -222,13 +238,28 @@ var factorial = function(number) {
 };
 
 var findAnagrams = function(string) {
-  return 'Write your method here';
+  var ary = string.split('');
+  var resultAry = [];
+  ary.forEach(function(letter){
+    remainder = ary.filter(function(element){
+      return element != letter ;
+    });
+    resultAry.push(letter+remainder.join(''),letter+(remainder.reverse()).join(''));
+  });
+  return resultAry.sort();
 };
 
 var convertToCelsius = function(number) {
-  return 'Write your method here';
+  return Math.ceil((number - 32) * 0.555);
 };
 
 var letterPosition = function(array) {
-  return 'Write your method here';
+  return array.map(function(element){
+    return alphaIndex(element);
+  });
+};
+
+var alphaIndex = function(letter) {
+  var alphabet = "_abcdefghijklmnopqrstuvwxyz";
+  return alphabet.indexOf(letter.toLowerCase());
 };
