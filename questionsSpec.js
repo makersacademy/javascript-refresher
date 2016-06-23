@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 describe('javascriptRefresher', function(){
 
@@ -29,7 +29,6 @@ describe('javascriptRefresher', function(){
 
   it('makes every possible pairing of students', function(){
     var result = everyPossiblePair(['Jon', 'Tyrion', 'Daenerys']);
-    // sorted alphabetically
     expect(result).toEqual([[ 'Daenerys', 'Jon' ], [ 'Daenerys', 'Tyrion' ], [ 'Jon', 'Tyrion' ]] );
   });
 
@@ -203,6 +202,5 @@ describe('javascriptRefresher', function(){
     var result = letterPosition(['H', 'e', 'l', 'l', 'o', 'k', 'i', 't', 't', 'y']);
     expect(result).toEqual([8, 5, 12, 12, 15, 11, 9, 20, 20, 25]);
   });
-
 
 });
