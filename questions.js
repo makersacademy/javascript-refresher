@@ -1,14 +1,16 @@
 var selectElementsStartingWithA = function(array) {
-  return array.filter(function(word){
-    return word[0].toLowerCase() === 'a';
-  });
+  return _selectElementsStartingWith(array, 'a');
 };
 
-var selectElementsStartingWithVowel = function(array) {
-  return array.filter(function(word){
-    return word.toLowerCase().match(/^[aeiou]/);
+function selectElementsStartingWithVowel(array) {
+  return _selectElementsStartingWith(array, /^[aeiou]/);
+}
+
+function _selectElementsStartingWith(array, letter) {
+  return array.filter(function(string) {
+    return string[0].toLowerCase().match(letter);
   });
-};
+}
 
 var removeNullElements = function(array) {
   return array.filter(function(element){
@@ -21,6 +23,7 @@ var removeNullAndFalseElements = function(array) {
     return (element !== null && element !== false);
   });
 };
+
 
 var reverseWordsInArray = function(array) {
   return array.map(function(word) {
