@@ -29,7 +29,18 @@ var removeNullElements = function(array) {
 }
 
 var removeNullAndFalseElements = function(array) {
-  return 'Write your method here';
+  var output = []
+  array.forEach(element);
+  function element(value) {
+    if (value === 0) {
+      output.push(value);
+      return
+    }
+    if (value != null && value != false) {
+      output.push(value);
+    }
+  }
+  return output;
 }
 
 var reverseWordsInArray = function(array) {

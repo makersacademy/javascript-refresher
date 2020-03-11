@@ -11,17 +11,17 @@ describe('javascriptRefresher', function(){
     var result = selectElementsStartingWithVowel(['john', 'david', 'omar', 'fred', 'idris', 'angela']);
     expect(result).toEqual(['omar', 'idris', 'angela']);
   });
-  
+
   it('removes null values from an array', function(){
     var result = removeNullElements(['a', 'b', null, null, false, 0]);
     expect(result).toEqual(['a', 'b', false, 0]);
   });
 
-  // it('removes null and false values from an array', function(){
-  //   var result = removeNullAndFalseElements(['a', 'b', null, null, false, 0]);
-  //   expect(result).toEqual(['a', 'b', 0]);
-  // });
-  //
+  it('removes null and false values from an array', function(){
+    var result = removeNullAndFalseElements(['a', 'b', null, null, false, 0]);
+    expect(result).toEqual(['a', 'b', 0]);
+  });
+
   // it('reverses the letters of each element in an array', function(){
   //   var result = reverseWordsInArray(['dog', 'monkey', 'elephant', 'kayak']);
   //   expect(result).toEqual(['god', 'yeknom', 'tnahpele', 'kayak']);
