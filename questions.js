@@ -10,7 +10,15 @@ var selectElementsStartingWithA = function(array) {
 }
 
 var selectElementsStartingWithVowel = function(array) {
-  return 'Write your method here';
+  output = []
+  array.forEach(pickA);
+  function pickA(value){
+    checkItem = value.charAt(0)
+    if (/[aeiou]/.test(checkItem)) {
+      output.push(value);
+    }
+  }
+  return output;
 }
 
 var removeNullElements = function(array) {

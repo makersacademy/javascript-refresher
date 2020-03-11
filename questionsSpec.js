@@ -7,10 +7,10 @@ describe('javascriptRefresher', function(){
     expect(result).toEqual(['apples', 'avocados']);
   });
 
-  // it('selects elements starting with a vowel', function(){
-  //   var result = selectElementsStartingWithVowel(['john', 'david', 'omar', 'fred', 'idris', 'angela']);
-  //   expect(result).toEqual(['omar', 'idris', 'angela']);
-  // });
+  it('selects elements starting with a vowel', function(){
+    var result = selectElementsStartingWithVowel(['john', 'david', 'omar', 'fred', 'idris', 'angela']);
+    expect(result).toEqual(['omar', 'idris', 'angela']);
+  });
   //
   // it('removes null values from an array', function(){
   //   var result = removeNullElements(['a', 'b', null, null, false, 0]);
