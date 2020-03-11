@@ -11,12 +11,12 @@ describe('javascriptRefresher', function(){
     var result = selectElementsStartingWithVowel(['john', 'david', 'omar', 'fred', 'idris', 'angela']);
     expect(result).toEqual(['omar', 'idris', 'angela']);
   });
-  //
-  // it('removes null values from an array', function(){
-  //   var result = removeNullElements(['a', 'b', null, null, false, 0]);
-  //   expect(result).toEqual(['a', 'b', false, 0]);
-  // });
-  //
+  
+  it('removes null values from an array', function(){
+    var result = removeNullElements(['a', 'b', null, null, false, 0]);
+    expect(result).toEqual(['a', 'b', false, 0]);
+  });
+
   // it('removes null and false values from an array', function(){
   //   var result = removeNullAndFalseElements(['a', 'b', null, null, false, 0]);
   //   expect(result).toEqual(['a', 'b', 0]);
