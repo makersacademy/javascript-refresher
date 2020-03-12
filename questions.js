@@ -44,23 +44,64 @@ var removeNullAndFalseElements = function(array) {
 }
 
 var reverseWordsInArray = function(array) {
-  return 'Write your method here';
+  var output = []
+  array.forEach(element);
+  function element(value) {
+    var valuesplit = value.split("")
+    var splitreverse = valuesplit.reverse()
+    var joinreverse = splitreverse.join("")
+    output.push(joinreverse)
+  }
+  return output;
 }
 
 var everyPossiblePair = function(array) {
-  return 'Write your method here';
+  var undupedArray = []
+  for (left = 0; left < array.length; left++)
+  {
+    for (right = 0; right < array.length; right++)
+    {
+      if (right === left){ continue }
+      low_level = [array[left], array[right]]
+      low_level_sorted = low_level.sort()
+      undupedArray.push(low_level_sorted)
+    }
+  }
+
+  console.log(output)
+  return output;
 }
 
 var allElementsExceptFirstThree = function(array) {
-  return 'Write your method here';
+  for (let iter = 0; iter < 3; iter++) {
+    array.shift()
+  }
+  return array;
 }
 
 var addElementToBeginning = function(array, element) {
-  return 'Write your method here';
+  array.unshift(element);
+  return array;
 }
 
 var sortByLastLetter = function(array) {
-  return 'Write your method here';
+  finished = 1
+  while (finished > 0) {
+    swaps = 0
+    for (let iter = 0; iter < array.length-1; iter++) {
+      let first = array[iter];
+      let second = array[iter+1];
+      if (second.charAt(second.length-1) < first.charAt(first.length-1)){
+        array[iter] = second;
+        array[iter+1] = first;
+        swaps +=1
+      }
+    }
+    if (swaps === 0) {
+      finished = 0
+    }
+  }
+  return array;
 }
 
 var getFirstHalf = function(string) {

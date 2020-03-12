@@ -22,31 +22,31 @@ describe('javascriptRefresher', function(){
     expect(result).toEqual(['a', 'b', 0]);
   });
 
-  // it('reverses the letters of each element in an array', function(){
-  //   var result = reverseWordsInArray(['dog', 'monkey', 'elephant', 'kayak']);
-  //   expect(result).toEqual(['god', 'yeknom', 'tnahpele', 'kayak']);
-  // });
-  //
+  it('reverses the letters of each element in an array', function(){
+    var result = reverseWordsInArray(['dog', 'monkey', 'elephant', 'kayak']);
+    expect(result).toEqual(['god', 'yeknom', 'tnahpele', 'kayak']);
+  });
+
   // it('makes every possible pairing of students', function(){
   //   var result = everyPossiblePair(['Jon', 'Tyrion', 'Daenerys']);
   //   // sorted alphabetically
   //   expect(result).toEqual([[ 'Daenerys', 'Jon' ], [ 'Daenerys', 'Tyrion' ], [ 'Jon', 'Tyrion' ]] );
   // });
-  //
-  // it('takes all elements except the first 3', function(){
-  //   var result = allElementsExceptFirstThree([1, 2, 3, 4, 5, 6, 7, 8]);
-  //   expect(result).toEqual([4, 5, 6, 7, 8]);
-  // });
-  //
-  // it('adds an element to the beginning of an array', function(){
-  //   var result = addElementToBeginning([2, 3, 4, 5], 1);
-  //   expect(result).toEqual([1, 2, 3, 4, 5]);
-  // });
-  //
-  // it('sorts an array by the last letter of each word', function(){
-  //   var result = sortByLastLetter(['Lannister', 'Stark', 'Greyjoy', 'Targaryen']);
-  //   expect(result).toEqual(['Stark', 'Targaryen', 'Lannister', 'Greyjoy']);
-  // });
+
+  it('takes all elements except the first 3', function(){
+    var result = allElementsExceptFirstThree([1, 2, 3, 4, 5, 6, 7, 8]);
+    expect(result).toEqual([4, 5, 6, 7, 8]);
+  });
+
+  it('adds an element to the beginning of an array', function(){
+    var result = addElementToBeginning([2, 3, 4, 5], 1);
+    expect(result).toEqual([1, 2, 3, 4, 5]);
+  });
+
+  it('sorts an array by the last letter of each word', function(){
+    var result = sortByLastLetter(['Lannister', 'Stark', 'Greyjoy', 'Targaryen']);
+    expect(result).toEqual(['Stark', 'Targaryen', 'Lannister', 'Greyjoy']);
+  });
   //
   // it('gets the first half of a string', function(){
   //   var resultOne = getFirstHalf('dragon');
