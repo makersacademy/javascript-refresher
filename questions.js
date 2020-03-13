@@ -61,7 +61,6 @@ var everyPossiblePair = function(array) {
   var firstname = 0
   while (firstname < array.length) {
     for (iter = firstname + 1; iter < array.length; iter++) {
-      console.log(sortedArray[iter])
       output.push([sortedArray[firstname], sortedArray[iter]])
     }
     firstname += 1
@@ -102,15 +101,40 @@ var sortByLastLetter = function(array) {
 }
 
 var getFirstHalf = function(string) {
-  return 'Write your method here';
+  if (string.length % 2 === 0) {
+    requiredchars = string.length / 2
+  } else {
+    requiredchars = (string.length / 2)+1
+  }
+  output = string.substr(0, requiredchars);
+  return output;
 }
 
 var makeNegative = function(number) {
-  return 'Write your method here';
+  output = number * -1
+  return output;
 }
 
 var numberOfPalindromes = function(array) {
-  return 'Write your method here';
+  output = 0
+  array.forEach(checking);
+  function checking (item) {
+    var string = item
+    if (string.length % 2 === 0) {
+      requiredchars = string.length / 2
+    } else {
+      requiredchars = (string.length / 2)+1
+    }
+    firsthalf = string.substr(0, requiredchars)
+    secondhalf = string.substr((string.length/2), requiredchars)
+    var valuesplit = secondhalf.split("")
+    var splitreverse = valuesplit.reverse()
+    var joinreverse = splitreverse.join("")
+    if (firsthalf === joinreverse) {
+      output += 1
+    }
+  }
+  return output;
 }
 
 var shortestWord = function(array) {

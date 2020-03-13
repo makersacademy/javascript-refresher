@@ -47,28 +47,28 @@ describe('javascriptRefresher', function(){
     var result = sortByLastLetter(['Lannister', 'Stark', 'Greyjoy', 'Targaryen']);
     expect(result).toEqual(['Stark', 'Targaryen', 'Lannister', 'Greyjoy']);
   });
-  //
-  // it('gets the first half of a string', function(){
-  //   var resultOne = getFirstHalf('dragon');
-  //   var resultTwo = getFirstHalf('snake');
-  //
-  //   expect(resultOne).toEqual('dra');
-  //   expect(resultTwo).toEqual('sna');
-  // });
-  //
-  // it('makes numbers negative', function(){
-  //   var resultOne = makeNegative(5);
-  //   var resultTwo = makeNegative(-5);
-  //
-  //   expect(resultOne).toEqual(-5);
-  //   expect(resultTwo).toEqual(-5);
-  // });
-  //
-  // it('counts elements in an array that are palindromes', function(){
-  //   var result = numberOfPalindromes(['kayak', 'noon', 'khaleesi', 'hodor', 'racecar', 'abcbc', 'abcba']);
-  //   expect(result).toEqual(4);
-  // });
-  //
+
+  it('gets the first half of a string', function(){
+    var resultOne = getFirstHalf('dragon');
+    var resultTwo = getFirstHalf('snake');
+
+    expect(resultOne).toEqual('dra');
+    expect(resultTwo).toEqual('sna');
+  });
+
+  it('makes numbers negative', function(){
+    var resultOne = makeNegative(5);
+    var resultTwo = makeNegative(-5);
+
+    expect(resultOne).toEqual(-5);
+    expect(resultTwo).toEqual(5);
+  });
+
+  it('counts elements in an array that are palindromes', function(){
+    var result = numberOfPalindromes(['kayak', 'noon', 'khaleesi', 'hodor', 'racecar', 'abcbc', 'abcba']);
+    expect(result).toEqual(4);
+  });
+
   // it('returns the shortest word in an array', function(){
   //   var result = shortestWord(['winter', 'is', 'coming']);
   //   expect(result).toEqual('is');
