@@ -166,7 +166,12 @@ var longestWord = function(array) {
 }
 
 var sumNumbers = function(array) {
-  return 'Write your method here';
+  var output = 0;
+  array.forEach(item);
+  function item(value) {
+    output += value
+  }
+  return output;
 }
 
 var repeatElements = function(array) {
