@@ -74,11 +74,11 @@ describe('javascriptRefresher', function(){
     expect(result).toEqual('is');
   });
 
-  // it('returns the longest word in an array', function(){
-  //   var result = longestWord(['A', 'Lannister', 'always', 'pays', 'his', 'debts'])
-  //   expect(result).toEqual('Lannister');
-  // });
-  //
+  it('returns the longest word in an array', function(){
+    var result = longestWord(['A', 'Lannister', 'always', 'pays', 'his', 'debts'])
+    expect(result).toEqual('Lannister');
+  });
+  
   // it('sums up the numbers in an array', function(){
   //   var result = sumNumbers([1, 3, 5, 6, 2, 8]);
   //   expect(result).toEqual(25);

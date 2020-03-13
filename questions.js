@@ -152,7 +152,17 @@ var shortestWord = function(array) {
 }
 
 var longestWord = function(array) {
-  return 'Write your method here';
+  longestIndex = -1
+  longestLength = 0
+  array.forEach(longest);
+  function longest(value, index) {
+    if (value.length > longestLength) {
+      longestLength = value.length;
+      longestIndex = index
+    }
+  }
+  output = array[longestIndex];
+  return output;
 }
 
 var sumNumbers = function(array) {
