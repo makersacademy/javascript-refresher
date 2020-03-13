@@ -56,19 +56,16 @@ var reverseWordsInArray = function(array) {
 }
 
 var everyPossiblePair = function(array) {
-  var undupedArray = []
-  for (left = 0; left < array.length; left++)
-  {
-    for (right = 0; right < array.length; right++)
-    {
-      if (right === left){ continue }
-      low_level = [array[left], array[right]]
-      low_level_sorted = low_level.sort()
-      undupedArray.push(low_level_sorted)
+  var sortedArray = array.sort()
+  var output = []
+  var firstname = 0
+  while (firstname < array.length) {
+    for (iter = firstname + 1; iter < array.length; iter++) {
+      console.log(sortedArray[iter])
+      output.push([sortedArray[firstname], sortedArray[iter]])
     }
+    firstname += 1
   }
-
-  console.log(output)
   return output;
 }
 

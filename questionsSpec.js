@@ -27,11 +27,11 @@ describe('javascriptRefresher', function(){
     expect(result).toEqual(['god', 'yeknom', 'tnahpele', 'kayak']);
   });
 
-  // it('makes every possible pairing of students', function(){
-  //   var result = everyPossiblePair(['Jon', 'Tyrion', 'Daenerys']);
-  //   // sorted alphabetically
-  //   expect(result).toEqual([[ 'Daenerys', 'Jon' ], [ 'Daenerys', 'Tyrion' ], [ 'Jon', 'Tyrion' ]] );
-  // });
+  it('makes every possible pairing of students', function(){
+    var result = everyPossiblePair(['Jon', 'Tyrion', 'Daenerys']);
+    // sorted alphabetically
+    expect(result).toEqual([[ 'Daenerys', 'Jon' ], [ 'Daenerys', 'Tyrion' ], [ 'Jon', 'Tyrion' ]] );
+  });
 
   it('takes all elements except the first 3', function(){
     var result = allElementsExceptFirstThree([1, 2, 3, 4, 5, 6, 7, 8]);
