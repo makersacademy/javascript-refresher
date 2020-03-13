@@ -138,7 +138,17 @@ var numberOfPalindromes = function(array) {
 }
 
 var shortestWord = function(array) {
-  return 'Write your method here';
+  shortestIndex = -1
+  shortestLength = 99999
+  array.forEach(shortest);
+  function shortest(value, index) {
+    if (value.length < shortestLength) {
+      shortestLength = value.length;
+      shortestIndex = index
+    }
+  }
+  output = array[shortestIndex];
+  return output;
 }
 
 var longestWord = function(array) {

@@ -69,11 +69,11 @@ describe('javascriptRefresher', function(){
     expect(result).toEqual(4);
   });
 
-  // it('returns the shortest word in an array', function(){
-  //   var result = shortestWord(['winter', 'is', 'coming']);
-  //   expect(result).toEqual('is');
-  // });
-  //
+  it('returns the shortest word in an array', function(){
+    var result = shortestWord(['winter', 'is', 'coming']);
+    expect(result).toEqual('is');
+  });
+
   // it('returns the longest word in an array', function(){
   //   var result = longestWord(['A', 'Lannister', 'always', 'pays', 'his', 'debts'])
   //   expect(result).toEqual('Lannister');
